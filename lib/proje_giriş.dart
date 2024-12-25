@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';// Blur efekti için
-import 'package:teknofest_proje/odevRenkler.dart';
+import 'package:teknofest_proje/proje_renkler.dart';
 
 
 class OdevAnasayfa extends StatefulWidget {

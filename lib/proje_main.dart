@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teknofest_proje/odevAnasayfa.dart';
+import 'package:teknofest_proje/proje_giriş.dart';
 
 
 
