@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:ui';
-
-import 'package:teknofest_proje/proje_renkler.dart'; // Bu dosyayı kontrol edin
+import 'package:teknofest_proje/proje_renkler.dart';
 
 class TarimBilChatPage extends StatefulWidget {
   @override
@@ -41,7 +40,7 @@ class _TarimBilChatPageState extends State<TarimBilChatPage> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("resimler/Photo & Art Print Crop, Zoran Zeremski.jpg"), // Resmin yolu doğru olmalı
+                image: AssetImage("resimler/Photo & Art Print Crop, Zoran Zeremski.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -65,7 +64,7 @@ class _TarimBilChatPageState extends State<TarimBilChatPage> {
                     style: TextStyle(
                       fontFamily: "Pacifico",
                       fontSize: 36,
-                      color: yazi_renk1, // yazi_renk1 doğru tanımlanmış olmalı
+                      color: yazi_renk1,
                     ),
                     textAlign: TextAlign.center,
                   ),
