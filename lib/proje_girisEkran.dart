@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:teknofest_proje/proje_girisyap.dart';
+import 'package:teknofest_proje/proje_kayitol.dart';
 import 'dart:ui';// Blur efekti için
 import 'package:teknofest_proje/proje_renkler.dart';
 
 
-class OdevAnasayfa extends StatefulWidget {
-  const OdevAnasayfa({super.key});
+class ProjeGirisEkran extends StatefulWidget {
+  const ProjeGirisEkran({super.key});
 
   @override
-  State<OdevAnasayfa> createState() => _OdevAnasayfaState();
+  State<ProjeGirisEkran> createState() => _ProjeGirisEkranState();
 }
 
-class _OdevAnasayfaState extends State<OdevAnasayfa> {
+class _ProjeGirisEkranState extends State<ProjeGirisEkran> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,83 +37,82 @@ class _OdevAnasayfaState extends State<OdevAnasayfa> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("resimler/Photo & Art Print Crop, Zoran Zeremski.jpg"), // Resmin yolu
-                fit: BoxFit.cover, // Resmin tüm alanı kaplamasını sağlar
+                image: AssetImage("resimler/Photo & Art Print Crop, Zoran Zeremski.jpg"),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0), // Bulanıklık derecesi
+            filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
             child: Container(
-              color: Colors.black.withOpacity(0), // Şeffaf katman
+              color: Colors.black.withOpacity(0),
             ),
           ),
           Center(
             child: Container(
-              width: 500, // Kutu genişliği
-              height: 300, // Kutu yüksekliği
+              width: 500,
+              height: 300,
               decoration: BoxDecoration(
-                color: ana_renk.withOpacity(0.5), // Opaklık %50
+                color: ana_renk.withOpacity(0.5),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(bottom: 30),
                     child: Text(
-                      "Hoşgeldiniz.",
+                      "Hoşgeldiniz",
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: yazi_renk2, // Yazı rengini yazi_renk1 olarak ayarladım
+                        color: yazi_renk2,
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Kullanıcı Adı Giriniz',
-                      hintStyle: TextStyle(color: yazi_renk2,fontSize: 18), // Placeholder metni rengi
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Şifre Giriniz',
-                      hintStyle: TextStyle(color: yazi_renk2,fontSize: 18), // Placeholder metni rengi
                     ),
                   ),
                   const SizedBox(height: 30),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                     children: [
-                      // Giriş Yap butonu
                       ElevatedButton(
                         onPressed: () {
-                          print("Giriş Yapıldı!");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProjeGiris(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: ana_renk, // Butonun arka plan rengi
+                          backgroundColor: ana_renk,
                           padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
                         ),
                         child: const Text(
                           "Giriş Yap",
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.white, // Buton yazı rengi
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      // Şifremi Unuttum yazısı
-                      TextButton(
+                      ElevatedButton(
                         onPressed: () {
-                          print("Şifremi Unuttum tıklandı!");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProjeKayitol(),
+                            ),
+                          );
                         },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: ana_renk,
+                          padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
+                        ),
                         child: const Text(
-                          "Şifremi Unuttum",
+                          "Kayıt ol",
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.blue, // Şifremi Unuttum yazısının rengi
+                            color: Colors.white,
                           ),
                         ),
                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teknofest_proje/proje_giriş.dart';
+import 'package:teknofest_proje/proje_girisEkran.dart';
+import 'package:teknofest_proje/proje_girisyap.dart';
 
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OdevAnasayfa(),
+      home: const ProjeGirisEkran(),
     );
   }
 }
